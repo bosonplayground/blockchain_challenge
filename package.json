@@ -1,0 +1,32 @@
+{
+    "name": "contracts",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "postinstall": "node scripts/post_install.js",
+        "build": "hardhat compile",
+        "test": "hardhat test",
+        "test:token": "hardhat test test/bosontoken-test.js",
+        "test:escrow": "hardhat test test/bosonescrow-test.js",
+        "test:market": "hardhat test test/bosonmarket-test.js",
+        "deploy": "hardhat run scripts/deploy.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@nomiclabs/hardhat-ethers": "^2.0.1",
+        "@nomiclabs/hardhat-waffle": "^2.0.1",
+        "chai": "^4.2.0",
+        "ethereum-waffle": "^3.2.2",
+        "ethers": "^5.0.26",
+        "hardhat": "^2.0.8",
+        "hardhat-contract-sizer": "^2.0.2",
+        "hardhat-docgen": "^1.0.0"
+    },
+    "dependencies": {
+        "@openzeppelin/contracts": "^3.3.0",
+        "dotenv": "^8.2.0"
+    }
+}
