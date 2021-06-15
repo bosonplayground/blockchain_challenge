@@ -15,6 +15,10 @@ if (fs.existsSync(addressesDataFile)) {
     console.log('Existing addresses file', JSON.stringify(addressesData));
 }
 
+if (!process.env.INFURA_API_KEY && ['goerli'].includes(hre.network.name)) {
+    throw new Error("Please set your INFURA_API_KEY in a .env file");
+}
+
 async function main() {
     // Hardhat always runs the compile task when running scripts with its command
     // line interface.

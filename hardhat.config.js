@@ -12,10 +12,6 @@ if (!process.env.MNEMONIC) {
     throw new Error("Please set your MNEMONIC in a .env file");
 }
 
-if (!process.env.INFURA_API_KEY) {
-    throw new Error("Please set your INFURA_API_KEY in a .env file");
-}
-
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
 task("accounts", "Prints the list of accounts", async() => {
@@ -39,7 +35,7 @@ module.exports = {
         hardhat: {},
         ganache: {
             chainId: 1337,
-            url: "http://127.0.0.1:7545",
+            url: "http://127.0.0.1:8545",
             accounts: {
                 count: 10,
                 initialIndex: 0,
