@@ -21,7 +21,7 @@
         "chai": "^4.2.0",
         "ethereum-waffle": "^3.2.2",
         "ethers": "^5.0.26",
-        "hardhat": "^2.0.8",
+        "hardhat": "2.0.8",
         "hardhat-contract-sizer": "^2.0.2",
         "hardhat-docgen": "^1.0.0"
     },

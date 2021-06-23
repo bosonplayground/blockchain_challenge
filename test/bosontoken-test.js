@@ -84,7 +84,7 @@ describe('Test BosonToken token standard ERC20 features', async() => {
         const amount = 15.5;
         const expected_price = bosonTokenPrice.mul(amount * 1000000).div(1000000);
         const amount_units = BigNumber.from(10).pow(decimals).mul(amount * 1000000).div(1000000);
-        BosonToken.connect(account2).credit(amount_units, { value: expected_price, gasPrice: 0 });
+        await BosonToken.connect(account2).credit(amount_units, { value: expected_price, gasPrice: 0 });
         const ethBalance2After = await account2.getBalance();
         const BosonTokenBalanceAfter = await BosonToken.balanceOf(account2Addr);
         expect(ethBalance2After.eq(ethBalance2Before.sub(expected_price))).to.be.true;
