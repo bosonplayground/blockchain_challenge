@@ -86,7 +86,7 @@ describe('BosonMarket Offer items for sale', async() => {
         const quantity = 1;
         const price_units = await convert_amount(price);
         const p = new Promise(async(resolve, reject) => {
-            BosonMarket.connect(account1).offerItem(ethers.utils.formatBytes32String(title), price_units, quantity);
+            await BosonMarket.connect(account1).offerItem(ethers.utils.formatBytes32String(title), price_units, quantity);
             let filter = BosonMarket.filters.OnNewItem(null, account1Addr);
             BosonMarket.once(filter, async(itemId, seller, title, price, quantity) => {
                 resolve({ itemId, seller, title, price, quantity });
@@ -308,7 +308,7 @@ describe('BosonMarket order items, complete and complain', async() => {
         expect(orderData[ORDER_DATAS.status]).to.equal(ORDER_STATUS.Complained);
         await expect(BosonMarket.connect(account3).complete(orderId)).to.be.revertedWith(revertMessage('BosonMarket: Invalid Order State'));
     });
-    it('Verify reset', async() => {
+    xit('Verify reset', async() => {
         expect((await BosonToken.balanceOf(account1Addr)).gt(0)).to.be.true;
         expect((await BosonToken.balanceOf(account3Addr)).gt(0)).to.be.true;
         expect((await BosonToken.totalSupply()).gt(0)).to.be.true;

@@ -42,7 +42,7 @@ describe("BosonEscrow Deployment", async() => {
         const expected_price = bosonTokenPrice.mul(amount * 1000000).div(1000000);
         const decimals = await BosonToken.decimals();
         const amount_units = BigNumber.from(10).pow(decimals).mul(amount * 1000000).div(1000000);
-        BosonToken.connect(account1).credit(amount_units, { value: expected_price, gasPrice: 0 });
+        await BosonToken.connect(account1).credit(amount_units, { value: expected_price, gasPrice: 0 });
         expect((await BosonToken.balanceOf(account1Addr)).gt(0)).to.be.true;
     });
     it('User 2 credits his account with 10 tokens', async() => {
@@ -50,7 +50,7 @@ describe("BosonEscrow Deployment", async() => {
         const expected_price = bosonTokenPrice.mul(amount * 1000000).div(1000000);
         const decimals = await BosonToken.decimals();
         const amount_units = BigNumber.from(10).pow(decimals).mul(amount * 1000000).div(1000000);
-        BosonToken.connect(account2).credit(amount_units, { value: expected_price, gasPrice: 0 });
+        await BosonToken.connect(account2).credit(amount_units, { value: expected_price, gasPrice: 0 });
         expect((await BosonToken.balanceOf(account2Addr)).gt(0)).to.be.true;
     });
     it('User 2 places a payment of 6 tokens to escrow', async() => {
