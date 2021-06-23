@@ -28,10 +28,10 @@ contract BosonToken is Ownable, ERC20 {
     }
 
     /** 
-    * @dev Credit the call account with the given amount of tokens,
-    * assuming that the caller is paying the price requested for this amount
-     *
-     */
+    * @dev Credit the calling account with the given amount of tokens
+    * if the caller is paying enough to cover the price of the requested amount of tokens
+    *
+    */
     function credit(uint256 amount) external payable {
         _mint(msg.sender, amount);
     }
