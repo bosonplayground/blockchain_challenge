@@ -2,7 +2,8 @@ const { deployContract } = require("ethereum-waffle");
 const { ethers } = require("hardhat");
 
 function revertMessage(error) {
-    return 'VM Exception while processing transaction: revert ' + error;
+    // for hardhat version<2.4.0 return 'VM Exception while processing transaction: revert ' + error;
+    return error;
 }
 
 function getBalanceAsNumber(bn, decimals, accuracy) {
