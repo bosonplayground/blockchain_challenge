@@ -3,9 +3,7 @@ require('hardhat-contract-sizer');
 
 
 const dotenvConfig = require('dotenv').config;
-// import { config as dotenvConfig } from "dotenv";
 const resolve = require('path').resolve;
-// import { resolve } from "path";
 dotenvConfig({ path: resolve(__dirname, "./.env") });
 
 if (!process.env.MNEMONIC) {
@@ -29,7 +27,7 @@ task("accounts", "Prints the list of accounts", async() => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-    solidity: "0.7.3",
+    solidity: "0.8.0",
     defaultNetwork: "hardhat",
     networks: {
         hardhat: {},

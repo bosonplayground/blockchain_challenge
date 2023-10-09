@@ -26,7 +26,7 @@
         "hardhat-docgen": "^1.1.1"
     },
     "dependencies": {
-        "@openzeppelin/contracts": "^3.4.1",
+        "@openzeppelin/contracts": "^4.9.3",
         "dotenv": "^10.0.0"
     }
 }
